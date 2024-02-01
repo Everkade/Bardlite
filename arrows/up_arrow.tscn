@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dip2aqxxjnd00"]
+
+[ext_resource type="Texture2D" uid="uid://bqhixksklwb1d" path="res://art/font24x30.png" id="1_cdeov"]
+
+[node name="Up Arrow" type="Sprite2D"]
+position = Vector2(712, 534)
+texture = ExtResource("1_cdeov")
+hframes = 15
+vframes = 8
+frame = 62

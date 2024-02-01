@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsnxw7q68mrsn"]
+
+[ext_resource type="Script" path="res://weapon/bullet.gd" id="1_drvvs"]
+[ext_resource type="Texture2D" uid="uid://dcmp0yf6ul7vl" path="res://art/Shuriken.png" id="1_yuyig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_30opm"]
+
+[node name="bullet" type="Area2D" groups=["Bullets"]]
+rotation = -2.08641
+scale = Vector2(0.25, 0.25)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_drvvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_yuyig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_30opm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

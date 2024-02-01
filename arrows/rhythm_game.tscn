@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://buxv1p80t7228"]
+
+[ext_resource type="Script" path="res://Arrows/rhythm_game.gd" id="1_sfesn"]
+[ext_resource type="PackedScene" uid="uid://5pjh3xkqawaw" path="res://arrows/down_arrow.tscn" id="1_tyjyy"]
+[ext_resource type="Script" path="res://arrows/down_arrow.gd" id="2_a7cfj"]
+[ext_resource type="PackedScene" uid="uid://u4bvrf2iyeub" path="res://arrows/left_arrow.tscn" id="2_frm4f"]
+[ext_resource type="PackedScene" uid="uid://dnshoyifhjuvu" path="res://arrows/right_arrow.tscn" id="3_xvvqx"]
+[ext_resource type="Script" path="res://arrows/left_arrow.gd" id="4_51pc7"]
+[ext_resource type="PackedScene" uid="uid://dip2aqxxjnd00" path="res://arrows/up_arrow.tscn" id="4_u18du"]
+[ext_resource type="Script" path="res://arrows/right_arrow.gd" id="6_2151d"]
+[ext_resource type="Script" path="res://arrows/up_arrow.gd" id="8_h361b"]
+
+[node name="rhythm_game" type="Node2D"]
+script = ExtResource("1_sfesn")
+
+[node name="Down Arrow" parent="." instance=ExtResource("1_tyjyy")]
+position = Vector2(1100, 200)
+scale = Vector2(3, 3)
+script = ExtResource("2_a7cfj")
+
+[node name="Left Arrow" parent="." instance=ExtResource("2_frm4f")]
+position = Vector2(900, 200)
+scale = Vector2(3, 3)
+script = ExtResource("4_51pc7")
+
+[node name="Right Arrow" parent="." instance=ExtResource("3_xvvqx")]
+position = Vector2(700, 200)
+scale = Vector2(3, 3)
+script = ExtResource("6_2151d")
+
+[node name="Up Arrow" parent="." instance=ExtResource("4_u18du")]
+position = Vector2(500, 200)
+scale = Vector2(3, 3)
+script = ExtResource("8_h361b")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

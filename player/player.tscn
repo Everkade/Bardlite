@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr3xknxcgp38y"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_1t6qv"]
+[ext_resource type="Texture2D" uid="uid://bgyc7cp180222" path="res://icon.svg" id="1_cwsjh"]
+[ext_resource type="PackedScene" uid="uid://dxdysnekobsl" path="res://weapon/caster.tscn" id="3_mv2rh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uinsd"]
+size = Vector2(131, 130)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1t6qv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uinsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cwsjh")
+
+[node name="caster" parent="." instance=ExtResource("3_mv2rh")]
+unique_name_in_owner = true
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(50, 50)
+collision_layer = 0

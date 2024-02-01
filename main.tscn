@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3x3x043hsas"]
+
+[ext_resource type="PackedScene" uid="uid://dr3xknxcgp38y" path="res://player/player.tscn" id="1_esa8b"]
+[ext_resource type="Script" path="res://main.gd" id="1_xtyyw"]
+[ext_resource type="PackedScene" uid="uid://pul7rth3b1e2" path="res://UI/user_interface.tscn" id="3_aw83o"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xtyyw")
+
+[node name="UserInterface" parent="." instance=ExtResource("3_aw83o")]
+
+[node name="player" parent="." instance=ExtResource("1_esa8b")]
+position = Vector2(777, 801)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="enemyDeath" from="." to="UserInterface" method="_on_main_enemy_death"]
+[connection signal="child_exiting_tree" from="UserInterface" to="." method="_on_user_interface_child_exiting_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

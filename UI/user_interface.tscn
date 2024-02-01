@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://pul7rth3b1e2"]
+
+[ext_resource type="Script" path="res://UI/GameUI.gd" id="1_3iavk"]
+[ext_resource type="Script" path="res://UI/user_interface.gd" id="1_6qbdo"]
+
+[node name="UserInterface" type="CanvasLayer"]
+script = ExtResource("1_6qbdo")
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3iavk")
+
+[node name="Score" type="Label" parent="GameUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 00"
+
+[connection signal="scoreChange" from="." to="GameUI" method="_on_user_interface_score_change"]
