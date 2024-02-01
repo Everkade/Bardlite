@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd3x3x043hsas"]
+[gd_scene load_steps=5 format=3 uid="uid://dd3x3x043hsas"]
 
 [ext_resource type="PackedScene" uid="uid://dr3xknxcgp38y" path="res://player/player.tscn" id="1_esa8b"]
 [ext_resource type="Script" path="res://main.gd" id="1_xtyyw"]
+[ext_resource type="Texture2D" uid="uid://bmxgeebx81ed" path="res://Art/Environment/sBackground1.png" id="2_jvrsm"]
 [ext_resource type="PackedScene" uid="uid://pul7rth3b1e2" path="res://UI/user_interface.tscn" id="3_aw83o"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xtyyw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -136.0
+offset_top = -2.0
+offset_right = 231.0
+offset_bottom = 334.0
+scale = Vector2(5, 5)
+texture = ExtResource("2_jvrsm")
 
 [node name="UserInterface" parent="." instance=ExtResource("3_aw83o")]
 
