@@ -1,11 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr3xknxcgp38y"]
+[gd_scene load_steps=20 format=3 uid="uid://dr3xknxcgp38y"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_1t6qv"]
-[ext_resource type="Texture2D" uid="uid://bgyc7cp180222" path="res://icon.svg" id="1_cwsjh"]
+[ext_resource type="Texture2D" uid="uid://i12ei5bduhq6" path="res://Art/Player Animation/Walk/PlayerWalk1.png" id="2_qfyrw"]
+[ext_resource type="Texture2D" uid="uid://d4d46uvwbhvg4" path="res://Art/Player Animation/Walk/PlayerWalk2.png" id="3_54bpc"]
 [ext_resource type="PackedScene" uid="uid://dxdysnekobsl" path="res://weapon/caster.tscn" id="3_mv2rh"]
+[ext_resource type="Texture2D" uid="uid://d0qh2x5x0wqqj" path="res://Art/Player Animation/Walk/PlayerWalk3.png" id="4_pe81j"]
+[ext_resource type="Texture2D" uid="uid://c6k6bui2gaxi3" path="res://Art/Player Animation/Walk/PlayerWalk4.png" id="5_go6j6"]
+[ext_resource type="Texture2D" uid="uid://cn6nhblisbjh6" path="res://Art/Player Animation/Walk/PlayerWalk5.png" id="6_hllyp"]
+[ext_resource type="Texture2D" uid="uid://c0a6u5g0u20qy" path="res://Art/Player Animation/Walk/PlayerWalk6.png" id="7_0vwow"]
+[ext_resource type="Texture2D" uid="uid://bf7wbf8rv4t8y" path="res://Art/Player Animation/Walk/PlayerWalk7.png" id="8_4tuje"]
+[ext_resource type="Texture2D" uid="uid://cjgdetoyc333o" path="res://Art/Player Animation/Walk/PlayerWalk8.png" id="9_26jmg"]
+[ext_resource type="Texture2D" uid="uid://dr7hfgd16nsw3" path="res://Art/Player Animation/Walk/PlayerWalk9.png" id="10_mocwc"]
+[ext_resource type="Texture2D" uid="uid://bdbf43f43xl7r" path="res://Art/Player Animation/Walk/PlayerWalk10.png" id="11_lvkxn"]
+[ext_resource type="Texture2D" uid="uid://bwlcb10x56hbb" path="res://Art/Player Animation/Walk/PlayerWalk11.png" id="12_mdstn"]
+[ext_resource type="Texture2D" uid="uid://c6txb5ku5qj7k" path="res://Art/Player Animation/Walk/PlayerWalk12.png" id="13_evhrs"]
+[ext_resource type="Texture2D" uid="uid://jtfdj2q1taan" path="res://Art/Player Animation/Walk/PlayerWalk13.png" id="14_akt4v"]
+[ext_resource type="Texture2D" uid="uid://dk8skl4nthfk3" path="res://Art/Player Animation/Walk/PlayerWalk14.png" id="15_ue45d"]
+[ext_resource type="Texture2D" uid="uid://bp06ep4lqn5gs" path="res://Art/Player Animation/Walk/PlayerWalk15.png" id="16_co2vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uinsd"]
-size = Vector2(131, 130)
+size = Vector2(49, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2d73b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qfyrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_54bpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pe81j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_go6j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hllyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0vwow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4tuje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_26jmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mocwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lvkxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mdstn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_evhrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_akt4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ue45d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_co2vy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 16.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1t6qv")
@@ -13,11 +80,14 @@ script = ExtResource("1_1t6qv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uinsd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cwsjh")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -6)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_2d73b")
+animation = &"walk"
+frame = 1
 
 [node name="caster" parent="." instance=ExtResource("3_mv2rh")]
 unique_name_in_owner = true
-position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(50, 50)
 collision_layer = 0
