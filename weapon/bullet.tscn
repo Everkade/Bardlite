@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsnxw7q68mrsn"]
 
 [ext_resource type="Script" path="res://weapon/bullet.gd" id="1_drvvs"]
-[ext_resource type="Texture2D" uid="uid://dcmp0yf6ul7vl" path="res://art/Shuriken.png" id="1_yuyig"]
+[ext_resource type="Texture2D" uid="uid://dcmp0yf6ul7vl" path="res://shit_art/Shuriken.png" id="1_yuyig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_30opm"]
 
