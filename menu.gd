@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	MainMenuMusic.play_music_main()
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")

@@ -1,3 +1,7 @@
+Node
+Label
+HSlider
+AudioStreamPlayer
 CheckBox
 Button
 CheckButton
@@ -8,6 +12,3 @@ CollisionShape2D
 AnimatableBody2D
 Camera2D
 Area2D
-Sprite2D
-Timer
-TextureRect

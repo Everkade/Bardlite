@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2wa07yukav3m"]
+
+[ext_resource type="Script" path="res://soundmenu.gd" id="1_l2v78"]
+
+[node name="SoundMenu" type="Node"]
+script = ExtResource("1_l2v78")

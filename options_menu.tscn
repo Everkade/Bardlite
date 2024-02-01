@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://8blg2tnxfvrr"]
+[gd_scene load_steps=3 format=3 uid="uid://8blg2tnxfvrr"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_xrhnp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dntp7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,6 +25,16 @@ layout_mode = 2
 layout_mode = 2
 text = "Toggle Fullscreen"
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume:"
+label_settings = SubResource("LabelSettings_dntp7")
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
 [node name="MusicToggle" type="CheckBox" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Mute Music"
@@ -36,4 +48,6 @@ layout_mode = 2
 text = "Back"
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/FullScreenToggle" to="." method="_on_full_screen_toggle_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/MusicToggle" to="." method="_on_music_toggle_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

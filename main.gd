@@ -3,6 +3,9 @@ extends Node2D
 var enemy_scene = preload("res://enemy/enemy.tscn")
 signal enemyDeath
 
+func _ready():
+	MainMenuMusic.play_music_level()
+
 func _on_timer_timeout():
 	var enemy = enemy_scene.instantiate()
 	var enemy2 = enemy_scene.instantiate()
