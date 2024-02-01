@@ -1,8 +1,10 @@
+res://menu.gd
 res://arrows/rhytm_manager.tscn
 res://player/player.gd
 res://arrows/fret_board.tscn
-res://arrows/left_arrow.tscn
-res://player/player.tscn
 res://main.tscn
-res://candle.gd
 res://objects/candle.tscn
+res://player/player.tscn
+res://menu.tscn
+res://options_menu.tscn
+res://options_menu.gd
