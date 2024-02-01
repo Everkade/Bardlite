@@ -1,29 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd3x3x043hsas"]
+[gd_scene load_steps=6 format=3 uid="uid://dd3x3x043hsas"]
 
 [ext_resource type="PackedScene" uid="uid://dr3xknxcgp38y" path="res://player/player.tscn" id="1_esa8b"]
 [ext_resource type="Script" path="res://main.gd" id="1_xtyyw"]
 [ext_resource type="Texture2D" uid="uid://bmxgeebx81ed" path="res://Art/Environment/sBackground1.png" id="2_jvrsm"]
 [ext_resource type="PackedScene" uid="uid://pul7rth3b1e2" path="res://UI/user_interface.tscn" id="3_aw83o"]
+[ext_resource type="PackedScene" uid="uid://cfmxign1tidw0" path="res://objects/candle.tscn" id="5_5m2dj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xtyyw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -136.0
-offset_top = -2.0
-offset_right = 231.0
-offset_bottom = 334.0
+offset_right = 367.0
+offset_bottom = 336.0
 scale = Vector2(5, 5)
 texture = ExtResource("2_jvrsm")
 
 [node name="UserInterface" parent="." instance=ExtResource("3_aw83o")]
 
 [node name="player" parent="." instance=ExtResource("1_esa8b")]
-position = Vector2(777, 801)
+position = Vector2(917, 969)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.5, 0.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1835
+limit_bottom = 1680
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="candle" parent="." instance=ExtResource("5_5m2dj")]
+position = Vector2(925, 840)
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="enemyDeath" from="." to="UserInterface" method="_on_main_enemy_death"]

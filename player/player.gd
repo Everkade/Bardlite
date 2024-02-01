@@ -16,9 +16,12 @@ func _physics_process(delta):
 @onready var sprite = $AnimatedSprite2D
 
 func handleAnimation():
+	var moveX = abs(velocity.x) > 0
+	var moveY = abs(velocity.y) > 0
 	
-	if abs(velocity.x) > 0 || abs(velocity.y) > 0:
+	if moveX: sprite.flip_h = velocity.x < 0
+	
+	if moveX || moveY:
 		sprite.play("walk")
-		sprite.flip_h = velocity.x < 0
 	else:
 		sprite.stop()
