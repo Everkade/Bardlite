@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpg467cltgwvf"]
+
+[ext_resource type="Script" path="res://arrows/fret_board_area.gd" id="1_1ljyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3x2w"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wmpb7"]
+
+[node name="fret_board" type="Node2D"]
+position = Vector2(931, 903)
+
+[node name="fret_board_area" type="Area2D" parent="."]
+scale = Vector2(69, 1)
+script = ExtResource("1_1ljyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fret_board_area"]
+shape = SubResource("RectangleShape2D_h3x2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="fret_board_area"]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_wmpb7")
+
+[connection signal="area_entered" from="fret_board_area" to="fret_board_area" method="_on_area_entered"]
+[connection signal="body_shape_entered" from="fret_board_area" to="fret_board_area" method="_on_body_shape_entered"]

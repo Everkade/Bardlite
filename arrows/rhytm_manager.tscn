@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://r3s4dtpg8rr3"]
+
+[ext_resource type="Script" path="res://arrows/rhytm_manager.gd" id="1_kkaci"]
+[ext_resource type="PackedScene" uid="uid://dpg467cltgwvf" path="res://arrows/fret_board.tscn" id="2_uj6t4"]
+
+[node name="rhytm_manager" type="Node2D"]
+script = ExtResource("1_kkaci")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="fret_board" parent="." instance=ExtResource("2_uj6t4")]
+position = Vector2(931, 1285)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

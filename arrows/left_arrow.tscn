@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://u4bvrf2iyeub"]
+[gd_scene load_steps=4 format=3 uid="uid://c5mpcl0orm0d2"]
 
-[ext_resource type="Texture2D" uid="uid://bqhixksklwb1d" path="res://art/font24x30.png" id="1_vrxth"]
+[ext_resource type="Script" path="res://arrows/arrow_move.gd" id="1_2w8iy"]
+[ext_resource type="Texture2D" uid="uid://bqhixksklwb1d" path="res://shit_art/font24x30.png" id="1_vrxth"]
 
-[node name="Left Arrow" type="Sprite2D"]
-position = Vector2(712, 534)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wj5ep"]
+
+[node name="Left Arrow" type="Node2D"]
+script = ExtResource("1_2w8iy")
+
+[node name="left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+shape = SubResource("CircleShape2D_wj5ep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
 texture = ExtResource("1_vrxth")
 hframes = 15
 vframes = 8
