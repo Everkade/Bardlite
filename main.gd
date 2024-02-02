@@ -1,12 +1,11 @@
 extends Node2D
 
-var crawlers = preload("res://enemy/enemy.tscn")
-var pig = preload("res://enemy/enemy.tscn")
-var cow = preload("res://enemy/enemy.tscn")
-var cat = preload("res://enemy/enemy.tscn")
+var crawlers = preload("res://enemy/crawlers.tscn")
+var frog = preload("res://enemy/frog.tscn")
+var bunny = preload("res://enemy/bunny.tscn")
 var fuel_load = preload("res://fuel/fuel.tscn")
 var fuel_positions = [Vector2(875, 250), Vector2(1550, 775), Vector2(300, 775), Vector2(950, 1225)]
-@onready var enemy_list = [crawlers, pig, cow, cat]
+@onready var enemy_list = [crawlers, frog, bunny]
 signal enemyDeath
 
 func _ready():
@@ -14,7 +13,7 @@ func _ready():
 
 func _on_timer_timeout():
 	var position_list = [Vector2(randf_range(20, 1000), -10), Vector2(-10, randf_range(20, 1000)), Vector2(randf_range(20, 1000), 1600), Vector2(1600, randf_range(20, 1000))]
-	var enemy = enemy_list[randi_range(0, 3)]
+	var enemy = enemy_list[randi_range(0, 2)]
 	var enemy_position = position_list[randi_range(0, 3)]
 	var enemy_one = enemy.instantiate()
 	enemy_one.position = enemy_position

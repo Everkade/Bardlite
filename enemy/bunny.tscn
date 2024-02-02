@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://csqgvg4iryols"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_b1c6g"]
+[ext_resource type="Texture2D" uid="uid://bd3olgnvsulxq" path="res://enemy/bunny.png" id="2_jqh32"]
+[ext_resource type="Script" path="res://enemy/State Machine.gd" id="7_5n05h"]
+[ext_resource type="Script" path="res://enemy/EnemyTargetLight.gd" id="8_r3nyj"]
+[ext_resource type="Script" path="res://enemy/EnemyIdle.gd" id="9_c32rc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cof0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jqh32")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jqh32")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_606lx"]
+size = Vector2(12.6, 9.1)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(10, 10)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_b1c6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cof0d")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+position = Vector2(-2.2, 2.05)
+shape = SubResource("RectangleShape2D_606lx")
+
+[node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("7_5n05h")
+initialState = NodePath("Target Light")
+
+[node name="Target Light" type="Node2D" parent="State Machine" node_paths=PackedStringArray("enemy", "sprite")]
+script = ExtResource("8_r3nyj")
+enemy = NodePath("../..")
+sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Idle" type="Node2D" parent="State Machine" node_paths=PackedStringArray("enemy", "sprite")]
+script = ExtResource("9_c32rc")
+enemy = NodePath("../..")
+sprite = NodePath("../../AnimatedSprite2D")
