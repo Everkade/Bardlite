@@ -12,10 +12,3 @@ Label
 HSlider
 EnemyIdle
 Node2D
-<<<<<<< Updated upstream
-CollisionShape2D
-Area2D
-Node
-Label
-=======
->>>>>>> Stashed changes
