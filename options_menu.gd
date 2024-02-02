@@ -27,9 +27,11 @@ func _on_full_screen_toggle_toggled(toggled_on):
 func _on_music_toggle_toggled(toggled_on):
 	SoundFx.button_click()
 	if toggled_on == true:
+		SoundSlider.sfx_on = 1
 		AudioServer.set_bus_mute(SoundSlider.music_bus, true)
 	else:
 		AudioServer.set_bus_mute(SoundSlider.music_bus, false)
+		SoundSlider.sfx_on = 0
 
 
 func _on_sfx_toggle_toggled(toggled_on):

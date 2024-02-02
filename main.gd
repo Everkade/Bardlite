@@ -14,6 +14,10 @@ signal increaseHealth
 
 func _ready():
 	MainMenuMusic.play_music_level()
+	if SoundSlider.sfx_on == 1:
+		AudioServer.set_bus_mute(SoundSlider.music_bus, true)
+	else:
+		AudioServer.set_bus_mute(SoundSlider.music_bus, false)
 
 func _on_timer_timeout():
 	var position_list = [Vector2(randf_range(20, 1000), -10), Vector2(-10, randf_range(20, 1000)), Vector2(randf_range(20, 1000), 1600), Vector2(1600, randf_range(20, 1000))]

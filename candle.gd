@@ -21,6 +21,7 @@ func _process(delta):
 		sprite.play("stage0")
 	elif health <= 0:
 		get_tree().change_scene_to_file("res://menu.tscn")
+		AudioServer.set_bus_mute(SoundSlider.sfx_bus, true)
 		
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
