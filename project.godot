@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MainMenuMusic="*res://main_menu_music.tscn"
 SoundSlider="*res://sound_slider.tscn"
+SoundFx="*res://sound_fx.tscn"
 
 [display]
 

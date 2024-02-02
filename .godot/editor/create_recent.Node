@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Node
 Label
 HSlider
@@ -8,6 +9,12 @@ EnemyIdle
 Node2D
 CollisionShape2D
 Area2D
+>>>>>>> Stashed changes
+=======
+AudioStreamPlayer
+Node
+Label
+HSlider
 >>>>>>> Stashed changes
 CheckBox
 Button

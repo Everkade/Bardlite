@@ -1,5 +1,7 @@
 res://arrows/rhytm_manager.tscn
 res://player/player.gd
+res://menu.gd
+res://options_menu.gd
 res://arrows/fret_board.tscn
 res://main.tscn
 res://objects/candle.tscn
@@ -9,6 +11,7 @@ res://options_menu.tscn
 <<<<<<< Updated upstream
 res://main_menu_music.tscn
 res://sound_slider.tscn
+<<<<<<< Updated upstream
 res://main.gd
 res://UI/GameUI.gd
 =======
@@ -22,4 +25,10 @@ res://state.gd
 res://enemy/EnemyIdle.gd
 res://enemy/State.gd
 res://enemy/EnemyTargetLight.gd
+>>>>>>> Stashed changes
+=======
+res://sound_fx.tscn
+res://default_bus_layout.tres
+res://soundmenu.gd
+res://sound_fx.gd
 >>>>>>> Stashed changes
