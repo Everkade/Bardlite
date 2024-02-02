@@ -30,11 +30,6 @@ func attack_one():
 	$"AttackSound".play()
 
 
-func attack_two():
-	
-	$"AttackSound2".play()
-
-
 func player_hurt():
 	
 	$"PlayerHurt".play()

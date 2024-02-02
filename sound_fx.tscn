@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4cgg6tkxn5yf"]
+[gd_scene load_steps=12 format=3 uid="uid://c4cgg6tkxn5yf"]
 
 [ext_resource type="Script" path="res://sound_fx.gd" id="1_h8ouo"]
 [ext_resource type="AudioStream" uid="uid://b35asjacmffuu" path="res://SFX/button_press.mp3" id="2_23wkc"]
@@ -10,6 +10,14 @@
 [ext_resource type="AudioStream" uid="uid://cbnwjbdehnrhh" path="res://SFX/C3Attack.wav" id="8_50md6"]
 [ext_resource type="AudioStream" uid="uid://sf641l084t0i" path="res://SFX/CharacterHurt.wav" id="9_in8na"]
 [ext_resource type="AudioStream" uid="uid://blgpvqw2dbicn" path="res://SFX/DeathSong.wav" id="10_cbkm4"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1f4rw"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("7_m6kgj")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_50md6")
+stream_1/weight = 2.786
 
 [node name="SoundFx" type="Node"]
 script = ExtResource("1_h8ouo")
@@ -39,13 +47,8 @@ volume_db = -12.468
 bus = &"SFX"
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_m6kgj")
-volume_db = -11.959
-bus = &"SFX"
-
-[node name="AttackSound2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_50md6")
-volume_db = -10.593
+stream = SubResource("AudioStreamRandomizer_1f4rw")
+volume_db = 0.56
 bus = &"SFX"
 
 [node name="PlayerHurt" type="AudioStreamPlayer" parent="."]
