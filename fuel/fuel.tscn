@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7c11jsfgb4uh"]
+
+[ext_resource type="Script" path="res://fuel/fuel.gd" id="1_gt0ww"]
+[ext_resource type="Texture2D" uid="uid://b7xlhs1kc38oa" path="res://Art/Environment/Candle/Candle_Stage0.png" id="1_l10gu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euj3s"]
+radius = 17.1172
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(349, 284)
+script = ExtResource("1_gt0ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -23)
+texture = ExtResource("1_l10gu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 13)
+shape = SubResource("CircleShape2D_euj3s")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
