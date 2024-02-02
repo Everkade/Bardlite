@@ -35,7 +35,12 @@ autostart = true
 [node name="candle" parent="." instance=ExtResource("5_5m2dj")]
 position = Vector2(925, 840)
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="enemyDeath" from="." to="UserInterface" method="_on_main_enemy_death"]
 [connection signal="child_exiting_tree" from="UserInterface" to="." method="_on_user_interface_child_exiting_tree"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

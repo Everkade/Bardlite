@@ -1,5 +1,6 @@
 res://arrows/rhytm_manager.tscn
 res://player/player.gd
+<<<<<<< Updated upstream
 res://menu.gd
 res://options_menu.gd
 res://arrows/fret_board.tscn
@@ -15,3 +16,18 @@ res://default_bus_layout.tres
 res://soundmenu.gd
 res://sound_fx.gd
 res://main.gd
+=======
+res://UI/GameUI.gd
+res://main.gd
+res://UI/user_interface.gd
+res://arrows/fret_board.tscn
+res://main.tscn
+res://weapon/bullet.gd
+res://weapon/bullet.tscn
+res://candle.gd
+res://objects/Area2D.gd
+res://objects/candle.tscn
+res://enemy/enemy.tscn
+res://fuel/fuel.tscn
+res://fuel/fuel.gd
+>>>>>>> Stashed changes

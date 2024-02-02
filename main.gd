@@ -1,11 +1,12 @@
 extends Node2D
 
-var frog = preload("res://enemy/enemy.tscn")
+var crawlers = preload("res://enemy/enemy.tscn")
 var pig = preload("res://enemy/enemy.tscn")
 var cow = preload("res://enemy/enemy.tscn")
 var cat = preload("res://enemy/enemy.tscn")
-
-@onready var enemy_list = [frog, pig, cow, cat]
+var fuel_load = preload("res://fuel/fuel.tscn")
+var fuel_positions = [Vector2(875, 250), Vector2(1550, 775), Vector2(300, 775), Vector2(950, 1225)]
+@onready var enemy_list = [crawlers, pig, cow, cat]
 signal enemyDeath
 
 func _ready():
@@ -16,9 +17,7 @@ func _on_timer_timeout():
 	var enemy = enemy_list[randi_range(0, 3)]
 	var enemy_position = position_list[randi_range(0, 3)]
 	var enemy_one = enemy.instantiate()
-	
 	enemy_one.position = enemy_position
-	
 	add_child(enemy_one)
 	
 
@@ -26,5 +25,8 @@ func _on_child_exiting_tree(node):
 	enemyDeath.emit()
 	
 
-func _on_user_interface_rhythm_launcher():
-	get_tree().change_scene_to_file("res://arrows/rhytm_manager.tscn")
+func _on_timer_2_timeout():
+	var fuel_position = fuel_positions[randi_range(0, 3)]
+	var fuel = fuel_load.instantiate()
+	fuel.position = fuel_position
+	add_child(fuel)

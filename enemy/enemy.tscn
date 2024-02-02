@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_606lx"]
-size = Vector2(8.5, 7)
+size = Vector2(12.6, 9.1)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(10, 10)
@@ -57,12 +57,11 @@ sprite_frames = SubResource("SpriteFrames_cof0d")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
-position = Vector2(-1.5, 1)
+position = Vector2(-2.2, 2.05)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_606lx")
 
 [node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("initialState")]
-scale = Vector2(1, 1)
 script = ExtResource("3_3ygok")
 initialState = NodePath("Target Light")
 
