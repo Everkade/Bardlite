@@ -38,5 +38,4 @@ position = Vector2(925, 840)
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="enemyDeath" from="." to="UserInterface" method="_on_main_enemy_death"]
 [connection signal="child_exiting_tree" from="UserInterface" to="." method="_on_user_interface_child_exiting_tree"]
-[connection signal="rhythm_launcher" from="UserInterface" to="." method="_on_user_interface_rhythm_launcher"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

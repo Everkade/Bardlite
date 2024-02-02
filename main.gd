@@ -27,4 +27,4 @@ func _on_child_exiting_tree(node):
 	
 
 func _on_user_interface_rhythm_launcher():
-	get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://arrows/rhytm_manager.tscn")
