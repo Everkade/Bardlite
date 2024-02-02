@@ -1,32 +1,14 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+EnemyIdle
+EnemyTargetLight
 Node
 Label
 HSlider
 AudioStreamPlayer
-=======
-EnemyIdle
 Node2D
 CollisionShape2D
 Area2D
->>>>>>> Stashed changes
-=======
 AudioStreamPlayer
 Node
 Label
 HSlider
->>>>>>> Stashed changes
 CheckBox
-Button
-CheckButton
-MarginContainer
-VBoxContainer
-AnimatedSprite2D
-AnimatableBody2D
-Camera2D
-<<<<<<< Updated upstream
-Area2D
-=======
-Sprite2D
-Timer
->>>>>>> Stashed changes
