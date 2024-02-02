@@ -29,3 +29,7 @@ func _on_timer_2_timeout():
 	var fuel = fuel_load.instantiate()
 	fuel.position = fuel_position
 	add_child(fuel)
+
+
+
+

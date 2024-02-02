@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cunca1xl17h3x"]
+[gd_scene load_steps=12 format=3 uid="uid://5mh1mrkqnuvq"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_jvq4q"]
 [ext_resource type="Texture2D" uid="uid://dwid1y50bjgla" path="res://Art/Enemy Animation/Flop/blobWalk1.png" id="2_v00p0"]
@@ -73,3 +73,13 @@ sprite = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_qabfy")
 enemy = NodePath("../..")
 sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.599999, 1.7)
+scale = Vector2(0.99, 0.49)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.325
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered2"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout2"]
