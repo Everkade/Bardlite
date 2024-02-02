@@ -7,8 +7,6 @@ res://weapon/bullet.tscn
 res://weapon/caster.tscn
 res://fuel/fuel.tscn
 res://objects/candle.tscn
-res://candle.gd
 res://sound_slider.tscn
-res://options_menu.gd
-res://soundmenu.gd
-res://main.gd
+res://options_menu.tscn
+res://candle.gd
