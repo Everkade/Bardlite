@@ -14,6 +14,7 @@ res://sound_slider.tscn
 <<<<<<< Updated upstream
 res://main.gd
 res://UI/GameUI.gd
+<<<<<<< Updated upstream
 =======
 res://candle.gd
 res://enemy/enemy.gd
@@ -31,4 +32,12 @@ res://sound_fx.tscn
 res://default_bus_layout.tres
 res://soundmenu.gd
 res://sound_fx.gd
+>>>>>>> Stashed changes
+=======
+res://menu.gd
+res://rhytm_manager.tscn
+res://UI/user_interface.gd
+res://UI/user_interface.tscn
+res://weapon/bullet.gd
+res://test_scene.tscn
 >>>>>>> Stashed changes
