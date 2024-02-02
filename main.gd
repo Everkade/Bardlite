@@ -1,29 +1,26 @@
 extends Node2D
 
-var enemy_scene = preload("res://enemy/enemy.tscn")
+var frog = preload("res://enemy/enemy.tscn")
+var pig = preload("res://enemy/enemy.tscn")
+var cow = preload("res://enemy/enemy.tscn")
+var cat = preload("res://enemy/enemy.tscn")
+
+@onready var enemy_list = [frog, pig, cow, cat]
 signal enemyDeath
 
 func _ready():
 	MainMenuMusic.play_music_level()
 
 func _on_timer_timeout():
-	var enemy = enemy_scene.instantiate()
-	var enemy2 = enemy_scene.instantiate()
-	var enemy3 = enemy_scene.instantiate()
-	var enemy4 = enemy_scene.instantiate()
+	var position_list = [Vector2(randf_range(20, 1000), -10), Vector2(-10, randf_range(20, 1000)), Vector2(randf_range(20, 1000), 1600), Vector2(1600, randf_range(20, 1000))]
+	var enemy = enemy_list[randi_range(0, 3)]
+	var enemy_position = position_list[randi_range(0, 3)]
+	var enemy_one = enemy.instantiate()
 	
-	enemy.position = Vector2(randf_range(20, 1000), -10)
-	enemy2.position = Vector2(-10, randf_range(20, 1000))
-	enemy3.position = Vector2(randf_range(20, 1000), 1600)
-	enemy4.position = Vector2(1600, randf_range(20, 1000))
+	enemy_one.position = enemy_position
 	
-	add_child(enemy)
-	add_child(enemy2)
-	add_child(enemy3)
-	add_child(enemy4)
+	add_child(enemy_one)
 	
-
-
 
 func _on_child_exiting_tree(node):
 	enemyDeath.emit()

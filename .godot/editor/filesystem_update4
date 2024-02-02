@@ -8,8 +8,5 @@ res://menu.tscn
 res://options_menu.tscn
 res://main_menu_music.tscn
 res://sound_slider.tscn
-res://soundmenu.gd
-res://options_menu.gd
 res://main.gd
-res://main_menu_music.gd
-res://menu.gd
+res://UI/GameUI.gd
