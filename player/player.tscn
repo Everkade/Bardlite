@@ -1,6 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dr3xknxcgp38y"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_1t6qv"]
+[ext_resource type="Texture2D" uid="uid://d3rh7cp1vu5kc" path="res://Art/Player Animation/Player_Animation1.png" id="2_j1rfc"]
 [ext_resource type="Texture2D" uid="uid://i12ei5bduhq6" path="res://Art/Player Animation/Walk/PlayerWalk1.png" id="2_qfyrw"]
 [ext_resource type="Texture2D" uid="uid://d4d46uvwbhvg4" path="res://Art/Player Animation/Walk/PlayerWalk2.png" id="3_54bpc"]
 [ext_resource type="PackedScene" uid="uid://dxdysnekobsl" path="res://weapon/caster.tscn" id="3_mv2rh"]
@@ -16,13 +17,20 @@
 [ext_resource type="Texture2D" uid="uid://c6txb5ku5qj7k" path="res://Art/Player Animation/Walk/PlayerWalk12.png" id="13_evhrs"]
 [ext_resource type="Texture2D" uid="uid://jtfdj2q1taan" path="res://Art/Player Animation/Walk/PlayerWalk13.png" id="14_akt4v"]
 [ext_resource type="Texture2D" uid="uid://dk8skl4nthfk3" path="res://Art/Player Animation/Walk/PlayerWalk14.png" id="15_ue45d"]
-[ext_resource type="Texture2D" uid="uid://bp06ep4lqn5gs" path="res://Art/Player Animation/Walk/PlayerWalk15.png" id="16_co2vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uinsd"]
 size = Vector2(49, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2d73b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j1rfc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_qfyrw")
@@ -67,7 +75,7 @@ animations = [{
 "texture": ExtResource("15_ue45d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_co2vy")
+"texture": ExtResource("15_ue45d")
 }],
 "loop": true,
 "name": &"walk",
@@ -84,7 +92,7 @@ shape = SubResource("RectangleShape2D_uinsd")
 position = Vector2(2, -6)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_2d73b")
-animation = &"walk"
+animation = &"idle"
 
 [node name="caster" parent="." instance=ExtResource("3_mv2rh")]
 unique_name_in_owner = true
