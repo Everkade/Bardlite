@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @export var speed: int = 400
+@onready var caster = %caster
+
+signal shoot
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -25,3 +28,6 @@ func handleAnimation():
 		sprite.play("walk")
 	else:
 		sprite.stop()
+		
+func _on_player_shoot():
+	shoot.emit()

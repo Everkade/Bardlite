@@ -1,19 +1,103 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd3x3x043hsas"]
+[gd_scene load_steps=18 format=3 uid="uid://dd3x3x043hsas"]
 
 [ext_resource type="PackedScene" uid="uid://dr3xknxcgp38y" path="res://player/player.tscn" id="1_esa8b"]
 [ext_resource type="Script" path="res://main.gd" id="1_xtyyw"]
-[ext_resource type="Texture2D" uid="uid://bmxgeebx81ed" path="res://Art/Environment/sBackground1.png" id="2_jvrsm"]
+[ext_resource type="Texture2D" uid="uid://deos6etxhank6" path="res://Art/Environment/Backgrounds/BG - Arena.png" id="2_3oamf"]
+[ext_resource type="Texture2D" uid="uid://whehh33mo8c1" path="res://Art/Environment/Backgrounds/BG - BL_BG.png" id="3_6aa3s"]
 [ext_resource type="PackedScene" uid="uid://pul7rth3b1e2" path="res://UI/user_interface.tscn" id="3_aw83o"]
+[ext_resource type="Texture2D" uid="uid://b4qdfpw7akdtx" path="res://Art/Environment/Backgrounds/BG - BL_FG.png" id="4_nf5ta"]
 [ext_resource type="PackedScene" uid="uid://cfmxign1tidw0" path="res://objects/candle.tscn" id="5_5m2dj"]
+[ext_resource type="Texture2D" uid="uid://bld0ysvlj7m83" path="res://Art/Environment/Backgrounds/BG - BL_Glow.png" id="5_8kwk8"]
+[ext_resource type="Texture2D" uid="uid://ctjwexuetmou8" path="res://Art/Environment/Backgrounds/BG - BR_BG.png" id="6_d14ho"]
+[ext_resource type="Texture2D" uid="uid://dux7oabqlcyo0" path="res://Art/Environment/Backgrounds/BG - BR_FG.png" id="7_vpd58"]
+[ext_resource type="Texture2D" uid="uid://bej8y55wlraar" path="res://Art/Environment/Backgrounds/BG - BR_Glow.png" id="8_6kjsc"]
+[ext_resource type="Texture2D" uid="uid://wpfta6cig46q" path="res://Art/Environment/Backgrounds/BG - TL_BG.png" id="9_0h6oh"]
+[ext_resource type="Texture2D" uid="uid://dbracriqcy1od" path="res://Art/Environment/Backgrounds/BG - TL_FG.png" id="10_nnqf4"]
+[ext_resource type="Texture2D" uid="uid://c6c2r7sarg1ne" path="res://Art/Environment/Backgrounds/BG - TL_Glow.png" id="11_quqqo"]
+[ext_resource type="Texture2D" uid="uid://dmxacp23lvnnn" path="res://Art/Environment/Backgrounds/BG - TR_BG.png" id="12_idqc0"]
+[ext_resource type="Texture2D" uid="uid://v5agj0pvq4h8" path="res://Art/Environment/Backgrounds/BG - TR_FG.png" id="13_tsu5x"]
+[ext_resource type="Texture2D" uid="uid://0x8tdklvyjt4" path="res://Art/Environment/Backgrounds/BG - TR_Glow.png" id="14_abvsh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xtyyw")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 offset_right = 367.0
 offset_bottom = 336.0
 scale = Vector2(5, 5)
-texture = ExtResource("2_jvrsm")
+texture = ExtResource("2_3oamf")
+
+[node name="BL_BG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 367.0
+offset_bottom = 336.0
+texture = ExtResource("3_6aa3s")
+
+[node name="BL_FG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_nf5ta")
+
+[node name="BL_Glow" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_8kwk8")
+
+[node name="BR_BG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_d14ho")
+
+[node name="BR_FG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_vpd58")
+
+[node name="BR_Glow" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_6kjsc")
+
+[node name="TL_BG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_0h6oh")
+
+[node name="TL_FG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_nnqf4")
+
+[node name="TL_Glow" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_quqqo")
+
+[node name="TR_BG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_idqc0")
+
+[node name="TR_FG" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_tsu5x")
+
+[node name="TR_Glow" type="TextureRect" parent="BG"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_abvsh")
 
 [node name="UserInterface" parent="." instance=ExtResource("3_aw83o")]
 
@@ -41,6 +125,8 @@ autostart = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="enemyDeath" from="." to="UserInterface" method="_on_main_enemy_death"]
+[connection signal="increaseHealth" from="." to="candle" method="_on_area_2d_increase_health"]
 [connection signal="child_exiting_tree" from="UserInterface" to="." method="_on_user_interface_child_exiting_tree"]
+[connection signal="shoot" from="player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -25,6 +25,7 @@ SoundFx="*res://sound_fx.tscn"
 
 window/size/viewport_width=800
 window/size/viewport_height=800
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

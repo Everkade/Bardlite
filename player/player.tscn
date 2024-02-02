@@ -90,3 +90,5 @@ animation = &"walk"
 unique_name_in_owner = true
 scale = Vector2(50, 50)
 collision_layer = 0
+
+[connection signal="shoot" from="caster" to="." method="_on_player_shoot"]
