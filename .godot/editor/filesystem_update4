@@ -9,4 +9,5 @@ res://fuel/fuel.tscn
 res://objects/candle.tscn
 res://sound_slider.tscn
 res://options_menu.tscn
-res://candle.gd
+res://enemy/frog.tscn
+res://enemy/EnemyTargetLight.gd

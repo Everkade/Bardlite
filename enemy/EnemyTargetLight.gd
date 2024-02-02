@@ -27,5 +27,5 @@ func handleAnimation():
 	if sprite:
 		var moveX = abs(enemy.velocity.x) > 0
 		
-		if moveX: sprite.flip_h = enemy.velocity.x < 0
+		if moveX: sprite.flip_h = enemy.velocity.x > 0
 		sprite.play("walk")
