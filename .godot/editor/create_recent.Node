@@ -12,6 +12,3 @@ CollisionShape2D
 Area2D
 Node
 Label
-HSlider
-CheckBox
-Button

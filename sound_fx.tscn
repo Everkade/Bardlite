@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4cgg6tkxn5yf"]
+[gd_scene load_steps=11 format=3 uid="uid://c4cgg6tkxn5yf"]
 
 [ext_resource type="Script" path="res://sound_fx.gd" id="1_h8ouo"]
 [ext_resource type="AudioStream" uid="uid://b35asjacmffuu" path="res://SFX/button_press.mp3" id="2_23wkc"]
 [ext_resource type="AudioStream" uid="uid://ck31vf0rkx61m" path="res://SFX/Footstep.wav" id="3_o6jos"]
+[ext_resource type="AudioStream" uid="uid://7ku6i7r6uvoo" path="res://SFX/Croaker.wav" id="4_r517o"]
+[ext_resource type="AudioStream" uid="uid://tdo3wig1e17e" path="res://SFX/CrawlerGrowl.wav" id="5_sektt"]
+[ext_resource type="AudioStream" uid="uid://bgiqvcv4a7yv4" path="res://SFX/DeathBunny.wav" id="6_miwyj"]
+[ext_resource type="AudioStream" uid="uid://bk7lwf50d2ssa" path="res://SFX/C4Attack.wav" id="7_m6kgj"]
+[ext_resource type="AudioStream" uid="uid://cbnwjbdehnrhh" path="res://SFX/C3Attack.wav" id="8_50md6"]
+[ext_resource type="AudioStream" uid="uid://sf641l084t0i" path="res://SFX/CharacterHurt.wav" id="9_in8na"]
+[ext_resource type="AudioStream" uid="uid://blgpvqw2dbicn" path="res://SFX/DeathSong.wav" id="10_cbkm4"]
 
 [node name="SoundFx" type="Node"]
 script = ExtResource("1_h8ouo")
@@ -14,4 +21,39 @@ bus = &"SFX"
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_o6jos")
 volume_db = -12.783
+bus = &"SFX"
+
+[node name="Croaker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r517o")
+volume_db = -10.811
+bus = &"SFX"
+
+[node name="CrawlerGrowl" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sektt")
+volume_db = -10.593
+bus = &"SFX"
+
+[node name="DeathBunny" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_miwyj")
+volume_db = -12.468
+bus = &"SFX"
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_m6kgj")
+volume_db = -11.959
+bus = &"SFX"
+
+[node name="AttackSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_50md6")
+volume_db = -10.593
+bus = &"SFX"
+
+[node name="PlayerHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_in8na")
+volume_db = -16.902
+bus = &"SFX"
+
+[node name="DeathJingle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_cbkm4")
+volume_db = -10.593
 bus = &"SFX"
