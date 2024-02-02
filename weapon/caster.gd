@@ -18,5 +18,6 @@ func shoot():
 func _on_timer_timeout():
 	if enemies_in_range.size() > 0:
 		shoot()
+		SoundFx.attack_one()
 
 
