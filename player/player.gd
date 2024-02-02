@@ -28,7 +28,7 @@ func handleAnimation():
 		sprite.play("walk")
 		SoundFx.footstep()
 	else:
-		sprite.stop()
+		sprite.play("idle")
 		
 func _on_player_shoot():
 	shoot.emit()
