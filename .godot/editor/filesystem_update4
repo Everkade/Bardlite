@@ -8,27 +8,10 @@ res://objects/candle.tscn
 res://player/player.tscn
 res://menu.tscn
 res://options_menu.tscn
-<<<<<<< Updated upstream
 res://main_menu_music.tscn
 res://sound_slider.tscn
-<<<<<<< Updated upstream
-res://main.gd
-res://UI/GameUI.gd
-=======
-res://candle.gd
-res://enemy/enemy.gd
-res://weapon/bullet.tscn
-res://objects/Area2D.gd
-res://enemy/enemy.tscn
-res://enemy/State Machine.gd
-res://state.gd
-res://enemy/EnemyIdle.gd
-res://enemy/State.gd
-res://enemy/EnemyTargetLight.gd
->>>>>>> Stashed changes
-=======
 res://sound_fx.tscn
 res://default_bus_layout.tres
 res://soundmenu.gd
 res://sound_fx.gd
->>>>>>> Stashed changes
+res://main.gd
