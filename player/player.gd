@@ -26,6 +26,7 @@ func handleAnimation():
 	
 	if moveX || moveY:
 		sprite.play("walk")
+		SoundFx.footstep()
 	else:
 		sprite.stop()
 		

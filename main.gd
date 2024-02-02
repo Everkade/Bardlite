@@ -32,7 +32,6 @@ func _on_timer_2_timeout():
 	var fuel = fuel_load.instantiate()
 	fuel.position = fuel_position
 	add_child(fuel)
-	
 	fuel.connect("increaseHealth", _on_increase_health)
 
 func _on_increase_health():
@@ -53,4 +52,5 @@ func _on_player_shoot():
 	var bullet_velocity = Vector2(bullet_speed * cos(ang), bullet_speed * sin(ang))
 	new_bullet.direction = bullet_velocity
 	print(bullet_velocity)
-	
+
+

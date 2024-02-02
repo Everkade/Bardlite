@@ -24,7 +24,7 @@ script = ExtResource("1_h8ouo")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_23wkc")
-bus = &"SFX"
+bus = &"MenuSFX"
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_o6jos")
@@ -38,12 +38,12 @@ bus = &"SFX"
 
 [node name="CrawlerGrowl" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_sektt")
-volume_db = -10.593
+volume_db = -5.297
 bus = &"SFX"
 
 [node name="DeathBunny" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_miwyj")
-volume_db = -12.468
+volume_db = -3.801
 bus = &"SFX"
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="."]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://8iqewtfew8yt"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="2_wph7m"]
+[ext_resource type="Script" path="res://enemy/State Machine.gd" id="3_3ygok"]
+[ext_resource type="Script" path="res://enemy/EnemyIdle.gd" id="4_vcpp7"]
+[ext_resource type="Script" path="res://enemy/EnemyTargetLight.gd" id="5_8pq0s"]
+[ext_resource type="Texture2D" uid="uid://dwid1y50bjgla" path="res://Art/Enemy Animation/Flop/blobWalk1.png" id="5_dlulb"]
+[ext_resource type="Texture2D" uid="uid://dch56qbsat4vu" path="res://Art/Enemy Animation/Flop/blobWalk2.png" id="6_et1qk"]
+[ext_resource type="Texture2D" uid="uid://yswlonn8xb4b" path="res://Art/Enemy Animation/Flop/blobWalk3.png" id="7_g5uou"]
+[ext_resource type="Texture2D" uid="uid://behdmve175o14" path="res://Art/Enemy Animation/Flop/blobWalk4.png" id="8_i6qwx"]
+[ext_resource type="Texture2D" uid="uid://xed3uq2bl1iu" path="res://Art/Enemy Animation/Flop/blobWalk5.png" id="9_73ojl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cof0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dlulb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dlulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_et1qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g5uou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i6qwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_73ojl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_606lx"]
+size = Vector2(12.6, 9.1)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(10, 10)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_wph7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cof0d")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+position = Vector2(-2.2, 2.05)
+shape = SubResource("RectangleShape2D_606lx")
+
+[node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("3_3ygok")
+initialState = NodePath("Target Light")
+
+[node name="Target Light" type="Node2D" parent="State Machine" node_paths=PackedStringArray("enemy", "sprite")]
+script = ExtResource("5_8pq0s")
+enemy = NodePath("../..")
+sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Idle" type="Node2D" parent="State Machine" node_paths=PackedStringArray("enemy", "sprite")]
+script = ExtResource("4_vcpp7")
+enemy = NodePath("../..")
+sprite = NodePath("../../AnimatedSprite2D")

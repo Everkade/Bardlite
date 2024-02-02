@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://csqgvg4iryols"]
+[gd_scene load_steps=8 format=3 uid="uid://cp8mp0a2n2hk"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_b1c6g"]
-[ext_resource type="Texture2D" uid="uid://bd3olgnvsulxq" path="res://enemy/bunny.png" id="2_jqh32"]
+[ext_resource type="Texture2D" path="res://enemy/bunny.png" id="2_jqh32"]
 [ext_resource type="Script" path="res://enemy/State Machine.gd" id="7_5n05h"]
 [ext_resource type="Script" path="res://enemy/EnemyTargetLight.gd" id="8_r3nyj"]
 [ext_resource type="Script" path="res://enemy/EnemyIdle.gd" id="9_c32rc"]
@@ -57,3 +57,13 @@ sprite = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_c32rc")
 enemy = NodePath("../..")
 sprite = NodePath("../../AnimatedSprite2D")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.05, 1.55)
+scale = Vector2(0.745, 0.965)
+
+[node name="Timer" type="Timer" parent="VisibleOnScreenNotifier2D"]
+wait_time = 0.324
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered3"]
+[connection signal="timeout" from="VisibleOnScreenNotifier2D/Timer" to="." method="_on_timer_timeout3"]

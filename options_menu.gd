@@ -36,8 +36,10 @@ func _on_sfx_toggle_toggled(toggled_on):
 	SoundFx.button_click()
 	if toggled_on == true:
 		AudioServer.set_bus_mute(SoundSlider.sfx_bus, true)
+		AudioServer.set_bus_mute(SoundSlider.menusfx_bus, true)
 	else:
 		AudioServer.set_bus_mute(SoundSlider.sfx_bus, false)
+		AudioServer.set_bus_mute(SoundSlider.menusfx_bus, false)
 
 
 

@@ -20,8 +20,9 @@ func _process(delta):
 	elif health > 5:
 		sprite.play("stage0")
 	elif health <= 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://menu.tscn")
 		
+
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name != "candle" || body.name != "player":
 		health -= 5
