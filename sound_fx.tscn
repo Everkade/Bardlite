@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4cgg6tkxn5yf"]
+[gd_scene load_steps=4 format=3 uid="uid://c4cgg6tkxn5yf"]
 
 [ext_resource type="Script" path="res://sound_fx.gd" id="1_h8ouo"]
 [ext_resource type="AudioStream" uid="uid://b35asjacmffuu" path="res://SFX/button_press.mp3" id="2_23wkc"]
+[ext_resource type="AudioStream" uid="uid://ck31vf0rkx61m" path="res://SFX/Footstep.wav" id="3_o6jos"]
 
 [node name="SoundFx" type="Node"]
 script = ExtResource("1_h8ouo")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_23wkc")
+bus = &"SFX"
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o6jos")
+volume_db = -12.783
 bus = &"SFX"
