@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbu5t5fiftto2"]
+[gd_scene load_steps=15 format=3 uid="uid://cbu5t5fiftto2"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_e6ysn"]
 [ext_resource type="Texture2D" uid="uid://d35nhsmmmah5o" path="res://Art/Environment/Backgrounds/Bg.png" id="2_1vrjj"]
+[ext_resource type="Texture2D" uid="uid://whehh33mo8c1" path="res://Art/Environment/Backgrounds/BG - BL_BG.png" id="3_vhvm8"]
+[ext_resource type="Texture2D" uid="uid://b4qdfpw7akdtx" path="res://Art/Environment/Backgrounds/BG - BL_FG.png" id="4_vimfc"]
+[ext_resource type="Texture2D" uid="uid://bld0ysvlj7m83" path="res://Art/Environment/Backgrounds/BG - BL_Glow.png" id="5_efj1f"]
+[ext_resource type="Texture2D" uid="uid://ctjwexuetmou8" path="res://Art/Environment/Backgrounds/BG - BR_BG.png" id="6_pffxs"]
+[ext_resource type="Texture2D" uid="uid://dux7oabqlcyo0" path="res://Art/Environment/Backgrounds/BG - BR_FG.png" id="7_6v6s4"]
+[ext_resource type="Texture2D" uid="uid://bej8y55wlraar" path="res://Art/Environment/Backgrounds/BG - BR_Glow.png" id="8_jw17s"]
+[ext_resource type="Texture2D" uid="uid://wpfta6cig46q" path="res://Art/Environment/Backgrounds/BG - TL_BG.png" id="9_jpxgn"]
+[ext_resource type="Texture2D" uid="uid://dbracriqcy1od" path="res://Art/Environment/Backgrounds/BG - TL_FG.png" id="10_dp1km"]
+[ext_resource type="Texture2D" uid="uid://c6c2r7sarg1ne" path="res://Art/Environment/Backgrounds/BG - TL_Glow.png" id="11_v43ko"]
+[ext_resource type="Texture2D" uid="uid://dmxacp23lvnnn" path="res://Art/Environment/Backgrounds/BG - TR_BG.png" id="12_xcvkb"]
+[ext_resource type="Texture2D" uid="uid://v5agj0pvq4h8" path="res://Art/Environment/Backgrounds/BG - TR_FG.png" id="13_yifuj"]
+[ext_resource type="Texture2D" uid="uid://0x8tdklvyjt4" path="res://Art/Environment/Backgrounds/BG - TR_Glow.png" id="14_1v8br"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -24,6 +36,90 @@ offset_right = 800.0
 offset_bottom = 800.0
 texture = ExtResource("2_1vrjj")
 stretch_mode = 5
+
+[node name="BL_BG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("3_vhvm8")
+
+[node name="BL_FG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("4_vimfc")
+
+[node name="BL_Glow" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("5_efj1f")
+
+[node name="BR_BG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("6_pffxs")
+
+[node name="BR_FG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("7_6v6s4")
+
+[node name="BR_Glow" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("8_jw17s")
+
+[node name="TL_BG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("9_jpxgn")
+
+[node name="TL_FG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("10_dp1km")
+
+[node name="TL_Glow" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("11_v43ko")
+
+[node name="TR_BG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("12_xcvkb")
+
+[node name="TR_FG" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("13_yifuj")
+
+[node name="TR_Glow" type="TextureRect" parent="TextureRect"]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 848.0
+offset_bottom = 848.0
+texture = ExtResource("14_1v8br")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
