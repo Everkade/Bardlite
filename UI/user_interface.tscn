@@ -23,3 +23,4 @@ theme_override_font_sizes/font_size = 32
 text = "Score: 00"
 
 [connection signal="scoreChange" from="." to="GameUI" method="_on_user_interface_score_change"]
+[connection signal="rhythm_launcher" from="GameUI" to="." method="_on_game_ui_rhythm_launcher"]
