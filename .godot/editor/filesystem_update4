@@ -1,8 +1,14 @@
 res://menu.tscn
 res://player/player.gd
+res://enemy/enemy.tscn
+res://main.tscn
 res://enemy/enemy.gd
 res://enemy/EnemyTargetLight.gd
-res://enemy/State.gd
-res://enemy/enemy.tscn
+res://menu.gd
+res://main.gd
+res://player/player.tscn
 res://enemy/EnemyIdle.gd
-res://main.tscn
+res://UI/GameUI.gd
+res://enemy/State Machine.gd
+res://enemy/State.gd
+res://UI/user_interface.gd

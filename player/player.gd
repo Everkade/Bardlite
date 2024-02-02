@@ -25,4 +25,3 @@ func handleAnimation():
 		sprite.play("walk")
 	else:
 		sprite.stop()
-		SoundFx.footstep()

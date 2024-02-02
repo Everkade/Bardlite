@@ -18,3 +18,14 @@ func update(_delta: float):
 func physicsUpdate(_delta: float):
 	if enemy:
 		enemy.velocity = direction * 60
+		handleAnimation()
+
+# Animation
+@export var sprite: AnimatedSprite2D
+
+func handleAnimation():
+	if sprite:
+		var moveX = abs(enemy.velocity.x) > 0
+		
+		if moveX: sprite.flip_h = enemy.velocity.x > 0
+		sprite.play("walk")

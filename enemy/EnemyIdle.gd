@@ -17,3 +17,11 @@ func update(_delta: float):
 func physicsUpdate(_delta: float):
 	if enemy:
 		enemy.velocity = direction
+		handleAnimation()
+
+# Animation
+@export var sprite: AnimatedSprite2D
+
+func handleAnimation():
+	if sprite:
+		sprite.play("idle")
