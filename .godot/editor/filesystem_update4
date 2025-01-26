@@ -10,4 +10,3 @@ res://objects/candle.tscn
 res://sound_slider.tscn
 res://options_menu.tscn
 res://enemy/frog.tscn
-res://enemy/EnemyTargetLight.gd
